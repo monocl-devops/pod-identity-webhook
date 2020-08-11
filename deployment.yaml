@@ -20,16 +20,6 @@ spec:
     spec:
       nodeSelector:
         core: "true"
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                    - pod-identity-webhook
-            topologyKey: "kubernetes.io/hostname"
       serviceAccountName: pod-identity-webhook
       containers:
         - name: pod-identity-webhook
