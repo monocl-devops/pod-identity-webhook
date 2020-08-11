@@ -48,6 +48,13 @@ spec:
             - name: webhook-certs
               mountPath: /var/run/app/certs
               readOnly: false
+          resources:
+            requests:
+              cpu: "0.25"
+              memory: "128Mi"
+            limits:
+              cpu: "0.5"
+              memory: "256Mi"
       volumes:
         - name: webhook-certs
           emptyDir: {}
